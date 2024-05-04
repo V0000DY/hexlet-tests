@@ -1,20 +1,13 @@
+import { strict as assert } from 'node:assert';
 import capitalize from "../src/capitalize.js";
 
-if (capitalize('hello') !== 'Hello') {
-    throw new Error('Функция работает неверно!');
-}
+assert(capitalize('hello') === 'Hello');
 
-if (capitalize('') !== '') {
-    throw new Error('Функция работает неверно!')
-}
+assert.equal(capitalize(''), '');
 
-if (capitalize('всем привет меня зовут Виталя') !== 'Всем привет меня зовут Виталя') {
-    throw new Error('Функция работает неверно!');
-}
+assert.strictEqual(capitalize('всем привет меня зовут Виталя'), 'Всем привет меня зовут Виталя');
 
-if (capitalize('1ban') !== '1ban') {
-    throw new Error('Функция работает неверно!');
-}
+assert.deepEqual(capitalize('1ban'), '1ban');
 
 if (capitalize('[]') !== '[]') {
     throw new Error('Функция работает неверно!');
